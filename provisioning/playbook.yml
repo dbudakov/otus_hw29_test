@@ -163,4 +163,9 @@
     copy: src=barman/pgmaster.conf dest=/etc/barman.d/
     
   - name: create replica slot
-    command: barman receive-wal --create-slot pgmaster
+    command: "{{ item }}"
+    with_items:
+      - "barman receive-wal --create-slot pgmaster"
+      - "/usr/bin/barman backup pgmaster || echo 0"
+      - "barman switch-xlog --force --archive pgmaster"
+    ignore_errors: yes
