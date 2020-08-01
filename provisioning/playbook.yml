@@ -33,7 +33,7 @@
         - vim
         - mc
         - tcpdump
-        - python-psycopg2
+          # - python-psycopg2
       state: latest
 
 - hosts: pgmaster

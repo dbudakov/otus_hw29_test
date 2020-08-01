@@ -12,10 +12,10 @@ Vagrant.configure(2) do |config|
     pgmaster.vm.hostname = "pgmaster"
   end
 
-  config.vm.define "pgslave" do |pgslave|
-    pgslave.vm.network "private_network", ip: "192.168.11.21", virtualbox__intnet: false
-    pgslave.vm.hostname = "pgslave"
-  end
+#  config.vm.define "pgslave" do |pgslave|
+#    pgslave.vm.network "private_network", ip: "192.168.11.21", virtualbox__intnet: false
+#    pgslave.vm.hostname = "pgslave"
+#  end
 
   config.vm.define "barman" do |barman|
     barman.vm.network "private_network", ip: "192.168.11.22", virtualbox__intnet: false
